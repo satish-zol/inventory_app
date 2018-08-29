@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.6'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'jquery-rails'
