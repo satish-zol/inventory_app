@@ -28,7 +28,7 @@
 
   <div class="form-group">
     <%= f.label :product_type %>
-    <%= f.text_field :product_type, class: 'form-control' %>
+    <%= f.select(:product_type, ["Acoustic", "Electric"], {prompt: "Select type"},  class: 'form-control') %>
   </div>
 
   <div class="form-group">
