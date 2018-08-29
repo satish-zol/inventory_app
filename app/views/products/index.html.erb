@@ -50,7 +50,7 @@
       </div>
     </div>
   <% end %>
-  <% if @accessories.nil?  %>
+  <% if @accessories.nil? || @accessories.empty? %>
     <p>There are no accessories available!</p>
   <% end %>
 </div>
