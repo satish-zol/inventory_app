@@ -3,7 +3,7 @@ class Admin::ProductsController < Admin::AdminController
 
   # GET /admin/products
   def index
-    @products = Product.search(params).page(params[:page]).per(10)
+    @products = Product.search(params).page(params[:page]).per(5)
   end
 
   # GET /admin/products/1
