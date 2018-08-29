@@ -1,0 +1,30 @@
+<h1>Accessories</h1>
+<div class="form-group">
+  <%= link_to 'New Accessory', new_admin_accessory_path, class: 'btn btn-primary' %>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @accessories.each do |accessory| %>
+      <tr>
+        <td><%= link_to accessory.name, admin_accessory_path(accessory) %></td>
+        <td><%= accessory.accessory_type %></td>
+        <td><%= accessory.price.round(2) rescue nil %></td>
+        <td>
+          <%= link_to 'Edit', edit_admin_accessory_path(accessory), class: 'btn btn-default' %>
+          <%= link_to 'Destroy', [:admin, accessory], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @accessories %>
+
+

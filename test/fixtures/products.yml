@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  model: MyString
+  type: 
+  strings: MyString
+  price: 1.5
+  serial_number: MyString
+  purchased_at: 2018-08-27 15:53:47
+  sold_at: 2018-08-27 15:53:47
+
+two:
+  brand: MyString
+  model: MyString
+  type: 
+  strings: MyString
+  price: 1.5
+  serial_number: MyString
+  purchased_at: 2018-08-27 15:53:47
+  sold_at: 2018-08-27 15:53:47

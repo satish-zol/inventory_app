@@ -1,0 +1,78 @@
+<%= form_for([:admin, product]) do |f| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :brand %>
+    <%= f.text_field :brand, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :model %>
+    <%= f.text_field :model, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :product_type %>
+    <%= f.text_field :product_type, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :strings, 'Number of strings' %>
+    <%= f.text_field :strings, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :purchased_at, 'Purchased Date' %>
+    <div class='input-group date' id='purchased_at'>
+      <%= f.text_field :purchased_at, class: "form-control" %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sold_at, 'Sold Date' %>
+    <div class='input-group date' id='sold_at'>
+      <%= f.text_field :sold_at, class: "form-control" %>
+      <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#purchased_at').datetimepicker({
+      format: 'YYYY-MM-DD'
+    });
+    $('#sold_at').datetimepicker({
+      format: 'YYYY-MM-DD'
+    });
+  });
+</script>

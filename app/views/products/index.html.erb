@@ -1,0 +1,57 @@
+<h3>Products</h3>
+<hr></hr>
+<div id="products" class="row list-group">
+  <% @products.each do |product| %>
+    <div class="item  col-xs-4 col-lg-4">
+      <div class="thumbnail">
+        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+        <div class="caption">
+          <h4 class="group inner list-group-item-heading"><%= product.name %></h4>
+          <p class="group inner list-group-item-text">Brand: <%= product.brand %></p>
+          <p class="group inner list-group-item-text">Model: <%= product.model %></p>
+          <p class="group inner list-group-item-text">Type: <%= product.product_type %></p>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <p class="lead"><%= number_to_currency(product.price.round(2), :unit => "$") %></p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <%= button_to 'Add to cart', line_items_path(product_id: product.id), class: "btn btn-success"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @products.nil? || @products.empty? %>
+    <p>There are no products available!</p>
+  <% end %>
+</div>
+<%= paginate @products %>
+
+<h3>Accessories</h3>
+<hr></hr>
+<div id="products" class="row list-group">
+  <% @accessories.each do |accessory| %>
+    <div class="item  col-xs-4 col-lg-4">
+      <div class="thumbnail">
+        <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+        <div class="caption">
+          <h4 class="group inner list-group-item-heading"><%= accessory.name %></h4>
+          <p class="group inner list-group-item-text">Type: <%= accessory.accessory_type %></p>
+          <div class="row">
+            <div class="col-xs-12 col-md-6">
+              <p class="lead"><%= number_to_currency(accessory.price.round(2), :unit => "$") %></p>
+            </div>
+            <div class="col-xs-12 col-md-6">
+              <%= button_to 'Add to cart', line_items_path(accessory_id: accessory.id), class: "btn btn-success"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <% if @accessories.nil?  %>
+    <p>There are no accessories available!</p>
+  <% end %>
+</div>
+<%= paginate @accessories %>
